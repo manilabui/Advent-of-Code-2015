@@ -1,10 +1,10 @@
 const fs = require('fs');
 
 // part 1
-fs.readFile('day-two/input.txt', (err, data) => {
+fs.readFile('day_2/input.txt', (err, data) => {
   const input = data.toString().split('\n');
 
-  const result = input.reduce((acc, currBox, i) => {
+  const result = input.reduce((acc, currBox) => {
   	const currArr = currBox.split('x').map(elem => parseInt(elem));
 
   	const sideA = currArr[0] * currArr[1];
@@ -20,10 +20,10 @@ fs.readFile('day-two/input.txt', (err, data) => {
 });
 
 // part 2
-fs.readFile('day-two/input.txt', (err, data) => {
+fs.readFile('day_2/input.txt', (err, data) => {
   const input = data.toString().split('\n');
 
-  const result = input.reduce((acc, currBox, i) => {
+  const result = input.reduce((acc, currBox) => {
     const currArr = currBox.split('x').map(elem => parseInt(elem));
 
     const l = currArr[0];
