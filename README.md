@@ -9,6 +9,8 @@ Collect stars by helping Santa solve puzzles. Two puzzles will be made available
 - [Day 1](day_1)
 - [Day 2](day_2)
 - [Day 3](day_3) 
+- [Day 4](day_4)
+- [Day 5](day_5)
 
 ## Reference
 https://adventofcode.com/2015
