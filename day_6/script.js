@@ -1,37 +1,37 @@
 const fs = require('fs');
 
-// part 1
 const createRow = (length, isBool = true) => {
-	const result = [];
+  const result = [];
 
-	for (let i = 0; i < length; i++) {
-		isBool ? result[i] = false : result[i] = 0;
-	}
+  for (let i = 0; i < length; i++) {
+    isBool ? result[i] = false : result[i] = 0;
+  }
 
-	return result;
+  return result;
 }
 
 const countLights = (grid, isBool = true) => {
-	const gridArr = Object.values(grid);
+  const gridArr = Object.values(grid);
 
-	const result = gridArr.reduce((acc, arr) => {
-		const arrLength = arr.length;
-		let counter = 0;
+  const result = gridArr.reduce((acc, arr) => {
+    const arrLength = arr.length;
+    let counter = 0;
 
-		for(let i = 0; i < arrLength; i++) {
-			const currLight = arr[i];
+    for(let i = 0; i < arrLength; i++) {
+      const currLight = arr[i];
 
-			if (currLight) {
-				isBool ? counter++ : counter += currLight;
-			}
-		}
+      if (currLight) {
+        isBool ? counter++ : counter += currLight;
+      }
+    }
 
-		return acc + counter;
-	}, 0);
+    return acc + counter;
+  }, 0);
 
-	return result;
+  return result;
 }
 
+// part 1
 fs.readFile('day_6/input.txt', (err, data) => {
   const input = data.toString().split('\n');
   const grid = {};
@@ -56,7 +56,7 @@ fs.readFile('day_6/input.txt', (err, data) => {
   		if (!currGridRow) grid[j] = [...gridRow];
 
   		for(let k = firstCol; k <= lastCol; k++) {
-				if (currGridRow && offSwitch) {
+				if (offSwitch) {
 					grid[j][k] = false;
 					continue;
 				}
